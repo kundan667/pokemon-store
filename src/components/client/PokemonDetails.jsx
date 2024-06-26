@@ -16,6 +16,7 @@ const PokemonDetails = ({ id }) => {
     const [isLoading, setIsLoading] = useState(true);
     const imgUrl = `${constants.POKEMON_IMG_URL}/${id}.svg`;
 
+    // handles fetching of pokemon based on id
     const fetchPokemonDetails = async () => {
         const { data, error } = await useFetch(`${constants.POKEMON_API_BASE_URL}/pokemon/${id}`);
         if (error) {
@@ -25,7 +26,6 @@ const PokemonDetails = ({ id }) => {
         }
         setPokemonDetails(data)
         setIsLoading(false);
-
     }
     useEffect(() => {
         if (!isEmpty(pokemonDetails)) return

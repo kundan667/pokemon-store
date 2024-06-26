@@ -15,11 +15,7 @@ const Header = ({ search = true }) => {
                 )
             }
 
-            {
-                search && (
-                    <PokemonSelection />
-                )
-            }
+            {search && (<PokemonSelection />)}
         </div>
     )
 }

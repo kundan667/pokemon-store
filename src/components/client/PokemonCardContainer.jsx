@@ -14,9 +14,9 @@ const PokemonCardContainer = () => {
     const { searchText, pokemonType } = useContext(PokemonContext);
     const [pokemonData, setPokemonData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const firstLoadSearchRef = useRef(true);
     const pokemonDataMainRef = useRef([]);
 
+    // handles fetching of pokemon types
     const handlePokemonType = async (url, key) => {
         setIsLoading(true)
         const { data } = await useFetch(url);
@@ -24,25 +24,15 @@ const PokemonCardContainer = () => {
         pokemonDataMainRef.current = data[key];
         setIsLoading(false)
     }
-    // handles search input for movies
+
+    // handles search input for pokemon
     useEffect(() => {
-        // if (firstLoadSearchRef.current) {
-        //     firstLoadSearchRef.current = false;
-        //     return
-        // }
-        console.log("here");
         const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.includes(searchText));
         setPokemonData(filteredPokemonArr);
-
     }, [searchText])
 
+    // handles pokemon types changes
     useEffect(() => {
-        // if (firstLoadSearchRef.current) {
-        //     firstLoadSearchRef.current = false;
-        //     return
-        // }
-        console.log("here--++", pokemonType);
-        console.log("here--++", !isEmpty(pokemonType));
         if (!isEmpty(pokemonType)) {
             handlePokemonType(`${constants.POKEMON_API_BASE_URL}/type/${pokemonType}`, 'pokemon');
         }
@@ -52,6 +42,7 @@ const PokemonCardContainer = () => {
         router.push(`/${id}`)
     }
 
+    // handles infinite page scroll for pagination
     useEffect(() => {
         const handleScroll = () => {
             let parentEl = document.getElementById("pokemon-container");

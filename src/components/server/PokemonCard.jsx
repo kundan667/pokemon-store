@@ -6,6 +6,8 @@ const PokemonCard = ({ data, navigate }) => {
     const splitUrl = 'https://pokeapi.co/api/v2/pokemon/';
     const id = isEmpty(data?.pokemon?.url) ? data.url.split(splitUrl)[1].split('/')[0] : data.pokemon.url.split(splitUrl)[1].split('/')[0];
     const imgUrl = `${constants.POKEMON_IMG_URL}/${id}.svg`;
+
+    // handles fall back images if image is not available
     function handleError(img) {
         img.target.src = './images/pokeball.png';
         img.alt = "Image failed to load";
