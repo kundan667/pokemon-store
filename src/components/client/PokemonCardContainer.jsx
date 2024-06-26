@@ -30,6 +30,7 @@ const PokemonCardContainer = () => {
         //     firstLoadSearchRef.current = false;
         //     return
         // }
+        console.log("here");
         const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.includes(searchText));
         setPokemonData(filteredPokemonArr);
 
@@ -40,8 +41,8 @@ const PokemonCardContainer = () => {
         //     firstLoadSearchRef.current = false;
         //     return
         // }
+        console.log("here");
         if (!isEmpty(pokemonType)) {
-            console.log("here");
             handlePokemonType(`${constants.POKEMON_API_BASE_URL}/type/${pokemonType}`, 'pokemon');
         }
     }, [pokemonType]);
