@@ -42,6 +42,7 @@ const PokemonCardContainer = () => {
         //     return
         // }
         console.log("here--++", pokemonType);
+        console.log("here--++", !isEmpty(pokemonType));
         if (!isEmpty(pokemonType)) {
             handlePokemonType(`${constants.POKEMON_API_BASE_URL}/type/${pokemonType}`, 'pokemon');
         }

@@ -11,16 +11,18 @@ const PokemonSelection = () => {
     const firstRender = useRef(true);
 
     const fetchPokemonTypes = async (url) => {
+        console.log('fetching');
         const { data } = await useFetch(url);
         setPokemonTypesArr(data.results);
         setPokemonType(getIdFromUrl(data?.results[0]?.url)); // set default type
     }
 
     useEffect(() => {
-        if (firstRender.current) {
-            firstRender.current = false;
-            return
-        }
+        // if (firstRender.current) {
+        //     firstRender.current = false;
+        //     return
+        // }
+        console.log("ef");
         if (isEmpty(pokemonTypesArr)) {
             fetchPokemonTypes(`${constants.POKEMON_API_BASE_URL}/type?offset=0&limit=22`)
         }
