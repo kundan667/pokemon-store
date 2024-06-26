@@ -1,12 +1,9 @@
 'use client'
+import constants from '@/constants';
 import PokemonContext from '@/context/pokemonContext';
 import useFetch from '@/hooks/useFetch';
 import { isEmpty } from '@/utils/commonUtils';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-
-// import MenuIcon from '@mui/icons-material/Menu';
-// import SearchIcon from '@mui/icons-material/Search';
-// import DirectionsIcon from '@mui/icons-material/Directions';
 
 const PokemonSelection = () => {
     const { setSearchText, searchText, setPokemonType, pokemonType } = useContext(PokemonContext);
@@ -25,7 +22,7 @@ const PokemonSelection = () => {
             return
         }
         if (isEmpty(pokemonTypesArr)) {
-            fetchPokemonTypes('https://pokeapi.co/api/v2/type?offset=0&limit=22')
+            fetchPokemonTypes(`${constants.POKEMON_API_BASE_URL}/type?offset=0&limit=22`)
         }
     }, []);
 
@@ -36,13 +33,13 @@ const PokemonSelection = () => {
 
     function getIdFromUrl(url) {
         if (isEmpty(url)) return ''
-        return url.split('https://pokeapi.co/api/v2/type/')[1].split('/')[0];
+        return url.split(`${constants.POKEMON_API_BASE_URL}/type/`)[1].split('/')[0];
     }
 
     return (
 
         <div className='flex gap-2'>
-            <select className="select select-bordered w-full max-w-xs capitalize"
+            <select className="select select-bordered w-full max-w-sm capitalize"
                 onChange={handlePokemonType}
                 value={pokemonType}
             >
@@ -52,7 +49,7 @@ const PokemonSelection = () => {
                     ))
                 }
             </select>
-            <input type="text" placeholder="Search Pokemon" className="input input-bordered w-full max-w-xs"
+            <input type="text" placeholder="Search Pokemon" className="input input-bordered w-full min-w-[12rem] sm:min-w-[15rem] max-w-sm"
                 onChange={e => setSearchText(e.target.value)}
                 value={searchText}
             />

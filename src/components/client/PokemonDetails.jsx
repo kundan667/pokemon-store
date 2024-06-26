@@ -49,7 +49,7 @@ const PokemonDetails = ({ id }) => {
                                 </ul>
                             </div>
                             <div className='block sm:flex'>
-                                <div className='w-full sm:w-[40%] relative p-[3rem] rounded-tl-lg rounded-tr-lg sm:rounded-tr-none sm:rounded-bl-lg border'>
+                                <div className='flex flex-col items-center content-center  w-full sm:w-[40%] sm:min-h-[350px] relative p-[3rem] rounded-tl-lg rounded-tr-lg sm:rounded-tr-none sm:rounded-bl-lg border'>
                                     <div className='overflow-hidden absolute inset-0 rounded-tl-lg rounded-tr-lg sm:rounded-tr-none sm:rounded-bl-lg z-1'
                                         style={{ clipPath: 'polygon(0 0, 115% 0, 0 115%)' }}
                                     >
@@ -67,8 +67,8 @@ const PokemonDetails = ({ id }) => {
                                 </div>
                                 <div className='w-full sm:w-[60%] px-[1rem] sm:px-[3rem] py-[1rem] bg-[#eee] rounded-tr-lg rounded-br-lg flex items-center'>
                                     <div>
-                                        <div className='font-oswald font-thin text-2xl pl-2'>{`#00${id}`}</div>
-                                        <div className='capitalize font-oswald font-bold text-4xl'><i>{pokemonDetails.name}</i></div>
+                                        <div className='font-oswald font-thin text-2xl pl-2'><i>{`#00${id}`}</i></div>
+                                        <div className='capitalize font-oswald font-bold text-5xl'><i>{pokemonDetails.name}</i></div>
                                         <div className='flex my-2'>
                                             <div className='font-poppins font-semibold pr-2 text-sm'>Types: </div>
                                             <PokemonFeatures data={pokemonDetails} mainKey={'types'} subKey={'type'} />
