@@ -31,7 +31,7 @@ const PokemonCard = ({ data, navigate }) => {
                         loading="lazy"
                     />
                 </figure>
-                <div className='font-sans text-gray-700 capitalize font-bold mb-3 mt-2'>{isEmpty(data?.pokemon) ? data.name : data.pokemon.name}</div>
+                <div className='font-poppins text-gray-700 capitalize font-bold mb-3 mt-2'>{isEmpty(data?.pokemon) ? data.name : data.pokemon.name}</div>
                 <button className='btn btn-sm bg-primary border-0 text-gray-700' onClick={() => navigate(id)}>Details</button>
 
             </div>

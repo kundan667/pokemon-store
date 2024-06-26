@@ -6,18 +6,15 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  daisyui: {
-    themes: false,
-  },
   theme: {
     extend: {
       colors: {
         primary: '#fbbf24',
       },
       fontFamily: {
-        sans: ['"Open Sans", sans-serif'],
+        // sans: ['"Open Sans", sans-serif'],
         oswald: ['"Oswald", sans-serif'],
-        montserrat: ['"Montserrat", sans-serif'],
+        // montserrat: ['"Montserrat", sans-serif'],
         poppins: ['"Poppins", sans-serif'],
       },
       backgroundImage: {

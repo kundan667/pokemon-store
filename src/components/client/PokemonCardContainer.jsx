@@ -38,7 +38,6 @@ const PokemonCardContainer = () => {
             return
         }
         const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.includes(searchText));
-        console.log("filteredPokemonArr:", filteredPokemonArr);
         setPokemonData(filteredPokemonArr);
 
     }, [searchText])
