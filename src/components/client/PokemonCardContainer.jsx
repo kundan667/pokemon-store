@@ -25,14 +25,9 @@ const PokemonCardContainer = () => {
         setIsLoading(false)
     }
 
-    console.log("pokemon searchL:", searchText);
-
     // handles search input for pokemon
     useEffect(() => {
-        console.log("pokemon searchL----:", searchText);
-        console.log("pokemon searchL pokemonDataMainRef----:", pokemonDataMainRef.current);
         const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.includes(searchText));
-        console.log("pokemon searchL filteredPokemonArr----:", filteredPokemonArr);
         setPokemonData(filteredPokemonArr);
     }, [searchText])
 
