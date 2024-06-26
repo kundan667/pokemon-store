@@ -26,21 +26,22 @@ const PokemonCardContainer = () => {
     }
     // handles search input for movies
     useEffect(() => {
-        if (firstLoadSearchRef.current) {
-            firstLoadSearchRef.current = false;
-            return
-        }
+        // if (firstLoadSearchRef.current) {
+        //     firstLoadSearchRef.current = false;
+        //     return
+        // }
         const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.includes(searchText));
         setPokemonData(filteredPokemonArr);
 
     }, [searchText])
 
     useEffect(() => {
-        if (firstLoadSearchRef.current) {
-            firstLoadSearchRef.current = false;
-            return
-        }
+        // if (firstLoadSearchRef.current) {
+        //     firstLoadSearchRef.current = false;
+        //     return
+        // }
         if (!isEmpty(pokemonType)) {
+            console.log("here");
             handlePokemonType(`${constants.POKEMON_API_BASE_URL}/type/${pokemonType}`, 'pokemon');
         }
     }, [pokemonType]);
