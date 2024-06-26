@@ -41,7 +41,7 @@ const PokemonCardContainer = () => {
         //     firstLoadSearchRef.current = false;
         //     return
         // }
-        console.log("here");
+        console.log("here--");
         if (!isEmpty(pokemonType)) {
             handlePokemonType(`${constants.POKEMON_API_BASE_URL}/type/${pokemonType}`, 'pokemon');
         }
