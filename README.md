@@ -1,3 +1,17 @@
+# Getting Started with Pokemon store app
+1. Pokemon can be searched based on type and further by their names
+2. On click of detail button on each card, one can see all the details of pokemon
+3. Every card has its color derived from it's pokemon.
+4. This application uses next router, tailwind, custom hooks, dynamic routing
+
+## Application setup process
+This application is built on node 20.12.2 and npm 10.5.0
+1. Clone the repository using `git clone https://github.com/kundan667/pokemon-store.git`
+2. Navigate to the project directory using `cd pokemon-store `
+3. Install the dependencies using `npm install`
+4. Start the application using `npm run dev`
+5. Open the application in your browser at `http://localhost:3000`
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
