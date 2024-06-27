@@ -16,6 +16,11 @@ const PokemonDetails = ({ id }) => {
     const [isLoading, setIsLoading] = useState(true);
     const imgUrl = `${constants.POKEMON_IMG_URL}/${id}.svg`;
 
+    function handleError(img) {
+        img.target.src = './images/pokeball.png';
+        img.alt = "Image failed to load";
+    }
+
     // handles fetching of pokemon based on id
     const fetchPokemonDetails = async () => {
         const { data, error } = await useFetch(`${constants.POKEMON_API_BASE_URL}/pokemon/${id}`);
@@ -65,6 +70,7 @@ const PokemonDetails = ({ id }) => {
                                     <img src={imgUrl} alt="pokemon"
                                         style={{ filter: 'drop-shadow(10px 10px 6px #272727ab)' }}
                                         className='relative z-1 transform hover:scale-[1.1] duration-300'
+                                        onError={(e) => handleError(e)}
                                     />
 
                                 </div>
