@@ -69,27 +69,28 @@ const PokemonDetails = ({ id }) => {
                                     <div>
                                         <div className='font-oswald font-thin text-2xl pl-2'><i>{`#00${id}`}</i></div>
                                         <div className='capitalize font-oswald font-bold text-5xl'><i>{pokemonDetails.name}</i></div>
-                                        <div className='flex my-1'>
-                                            <div className='font-poppins font-semibold pr-2 text-sm'>Types: </div>
-                                            <PokemonFeatures data={pokemonDetails} mainKey={'types'} subKey={'type'} />
-                                        </div>
-                                        <div className='flex my-1'>
-                                            <div className='font-poppins font-semibold pr-2 text-sm'>Abilities:</div>
-                                            <PokemonFeatures data={pokemonDetails} mainKey={'abilities'} subKey={'ability'} clip={4} />
-                                        </div>
-
-                                        <div className='flex my-1'>
-                                            <div className='font-poppins font-semibold pr-2 text-sm'>Moves:</div>
-                                            <PokemonFeatures data={pokemonDetails} mainKey={'moves'} subKey={'move'} clip={5} />
-                                        </div>
-                                        <div className='flex my-1'>
-                                            <div className='font-poppins font-semibold pr-2 text-sm'>Stats:</div>
-                                            <PokemonFeatures data={pokemonDetails} mainKey={'stats'} subKey={'stat'} />
-                                        </div>
-                                        <div>
-                                            <span className='font-poppins font-semibold pr-2 text-sm'>Weight:</span>
-                                            <span>{pokemonDetails.weight}</span>
-                                        </div>
+                                        <table cellspacing="4" cellpadding="4">
+                                            <tr className='font-poppins  pr-2 text-sm'>
+                                                <td class="font-semibold text-left align-top">Types:</td>
+                                                <td class="first"><PokemonFeatures data={pokemonDetails} mainKey={'types'} subKey={'type'} /></td>
+                                            </tr>
+                                            <tr className='font-poppins  pr-2 text-sm'>
+                                                <td class="font-semibold text-left align-top">Abilities:</td>
+                                                <td class="first"><PokemonFeatures data={pokemonDetails} mainKey={'abilities'} subKey={'ability'} clip={4} /></td>
+                                            </tr>
+                                            <tr className='font-poppins  pr-2 text-sm'>
+                                                <td class="font-semibold text-left align-top">Moves:</td>
+                                                <td class="first"><PokemonFeatures data={pokemonDetails} mainKey={'moves'} subKey={'move'} clip={5} /></td>
+                                            </tr>
+                                            <tr className='font-poppins  pr-2 text-sm'>
+                                                <td class="font-semibold text-left align-top">Stats:</td>
+                                                <td class="first"><PokemonFeatures data={pokemonDetails} mainKey={'stats'} subKey={'stat'} /></td>
+                                            </tr>
+                                            <tr className='font-poppins  pr-2 text-sm'>
+                                                <td class="font-semibold text-left align-top">Weight:</td>
+                                                <td class="first"><span>{pokemonDetails.weight}</span></td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
