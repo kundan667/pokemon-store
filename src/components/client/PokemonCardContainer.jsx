@@ -30,7 +30,12 @@ const PokemonCardContainer = () => {
 
     // handles search input for pokemon
     useEffect(() => {
-        const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.includes(searchText));
+        console.log("pokemonDataMainRef:", pokemonDataMainRef.current);
+        const filteredPokemonArr = pokemonDataMainRef.current.filter(d => {
+            console.log("d::", d);
+            return d.pokemon.name.toLowerCase().includes(searchText.toLowerCase())
+            // return d.pokemon.name.includes(searchText)
+        });
         console.log("filteredPokemonArr:", filteredPokemonArr);
         setPokemonData(filteredPokemonArr);
     }, [searchText]);
