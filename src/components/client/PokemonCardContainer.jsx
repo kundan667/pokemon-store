@@ -16,32 +16,20 @@ const PokemonCardContainer = () => {
     const [isLoading, setIsLoading] = useState(true);
     const pokemonDataMainRef = useRef([]);
 
-    console.log("searchText:", searchText);
-    console.log("pokemonType:", pokemonType);
     // handles fetching of pokemon types
     const handlePokemonType = async (url, key) => {
         setIsLoading(true)
         const { data } = await useFetch(url);
         setPokemonData(data.pokemon);
         pokemonDataMainRef.current = data[key];
-        console.log("pokemonDataMainRef.current:", pokemonDataMainRef.current);
         setIsLoading(false)
     }
 
     // handles search input for pokemon
     useEffect(() => {
-        console.log("pokemonDataMainRef:", pokemonDataMainRef.current);
-        const filteredPokemonArr = pokemonDataMainRef.current.filter(d => {
-            console.log("d::", d);
-            return d.pokemon.name.toLowerCase().includes(searchText.toLowerCase())
-            // return d.pokemon.name.includes(searchText)
-        });
-        console.log("filteredPokemonArr:", filteredPokemonArr);
+        const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.toLowerCase().includes(searchText.toLowerCase()));
         setPokemonData(filteredPokemonArr);
     }, [searchText]);
-    useEffect(() => {
-        console.log("pokemonType:", pokemonType);
-    }, [pokemonType])
 
     // handles pokemon types changes
     useEffect(() => {
