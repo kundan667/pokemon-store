@@ -10,7 +10,7 @@ This application is built on node 20.12.2 and npm 10.5.0
 2. Navigate to the project directory using `cd pokemon-store `
 3. Install the dependencies using `npm install`
 4. Start the application using `npm run dev`
-5. Open the application in your browser at `http://localhost:3000`
+5. Open the application in your browser at `http://localhost:3000` || https://pokemon-store-lemon.vercel.app/
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
