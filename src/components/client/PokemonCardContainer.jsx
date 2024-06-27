@@ -24,14 +24,19 @@ const PokemonCardContainer = () => {
         const { data } = await useFetch(url);
         setPokemonData(data.pokemon);
         pokemonDataMainRef.current = data[key];
+        console.log("pokemonDataMainRef.current:", pokemonDataMainRef.current);
         setIsLoading(false)
     }
 
     // handles search input for pokemon
     useEffect(() => {
         const filteredPokemonArr = pokemonDataMainRef.current.filter(d => d.pokemon.name.includes(searchText));
+        console.log("filteredPokemonArr:", filteredPokemonArr);
         setPokemonData(filteredPokemonArr);
-    }, [searchText])
+    }, [searchText]);
+    useEffect(() => {
+        console.log("pokemonType:", pokemonType);
+    }, [pokemonType])
 
     // handles pokemon types changes
     useEffect(() => {
