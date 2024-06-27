@@ -13,7 +13,7 @@ const PokemonCardContainer = () => {
     const router = useRouter();
     const { searchText, pokemonType } = useContext(PokemonContext);
     const [pokemonData, setPokemonData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const pokemonDataMainRef = useRef([]);
 
     // handles fetching of pokemon types
@@ -74,7 +74,7 @@ const PokemonCardContainer = () => {
         </div>
 
         {
-            isEmpty(pokemonData) && <div className='flex items-center justify-center py-4'>No Pokemon</div>
+            isEmpty(pokemonData) && !isLoading && <div className='flex items-center justify-center py-4'>No Pokemon</div>
         }
     </>
     )
