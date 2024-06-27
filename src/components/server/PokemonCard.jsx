@@ -14,7 +14,7 @@ const PokemonCard = ({ data, navigate }) => {
     }
 
     return (
-        <div className="relative shadow-lg cursor-pointer max-w-[40%] sm:max-w-[220px] p-[1rem] rounded-lg aspect-[9/10] bg-gray-100 mt-[55px] bg-center inline-block">
+        <div className="relative group shadow-lg cursor-pointer max-w-[40%] sm:max-w-[220px] p-[1rem] rounded-lg aspect-[9/10] bg-gray-100 mt-[55px] bg-center inline-block">
             <div className='overflow-hidden absolute inset-0 rounded-lg'>
                 <div className='absolute inset-0 bg-no-repeat bg-center blur-[50px] z-0 top-[50%] left-[50%]'
                     style={{
@@ -28,15 +28,17 @@ const PokemonCard = ({ data, navigate }) => {
                 <figure className='w-full h-full'>
                     <img src={imgUrl}
                         alt="pokemon"
-                        className='w-[200px] rounded-lg aspect-[9/10] object-contain mt-[-80px]'
+                        style={{ filter: 'drop-shadow(10px 10px 6px #272727ab)' }}
+                        className='w-[200px] rounded-lg aspect-[9/10] object-contain mt-[-80px] transform  group-hover:scale-[1.1] transition-transform'
                         onError={(e) => handleError(e)}
                         loading="lazy"
                     />
                 </figure>
                 <div className='font-poppins text-gray-700 capitalize font-bold mb-3 mt-2'>{isEmpty(data?.pokemon) ? data.name : data.pokemon.name}</div>
                 <button className='btn btn-sm bg-primary border-0 text-gray-700' onClick={() => navigate(id)}>Details</button>
-
             </div>
+            {/* /* filter: drop-shadow(10px 10px 6px #272727ab); */
+    /* color: #272727ab; */}
         </div>
     )
 }

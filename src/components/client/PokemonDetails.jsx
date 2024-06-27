@@ -62,7 +62,10 @@ const PokemonDetails = ({ id }) => {
                                     </div>
 
                                     <Image src={pokemonTextImg} className='relative z-1 w-[50%] mb-4' alt="loader" />
-                                    <img src={imgUrl} alt="pokemon" className='relative z-1' />
+                                    <img src={imgUrl} alt="pokemon"
+                                        style={{ filter: 'drop-shadow(10px 10px 6px #272727ab)' }}
+                                        className='relative z-1 transform hover:scale-[1.1] duration-300'
+                                    />
 
                                 </div>
                                 <div className='w-full sm:w-[60%] px-[1rem] sm:px-[3rem] py-[1rem] bg-[#eee] rounded-bl-lg sm:rounded-bl-none sm:rounded-tr-lg rounded-br-lg flex items-center'>
