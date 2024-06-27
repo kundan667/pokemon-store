@@ -16,6 +16,8 @@ const PokemonCardContainer = () => {
     const [isLoading, setIsLoading] = useState(true);
     const pokemonDataMainRef = useRef([]);
 
+    console.log("searchText:", searchText);
+    console.log("pokemonType:", pokemonType);
     // handles fetching of pokemon types
     const handlePokemonType = async (url, key) => {
         setIsLoading(true)
